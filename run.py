@@ -67,16 +67,26 @@ def existing_client():
 
 def get_client_details():
     print("\nLet's get client informations...\n")
-    get_name()
-    
-  
-def get_name():
+    # Criar uma class pra geral
+
+
+def validate_name():
     while True:
         name = input("What is the client name?\n\n").lower()
+        
         if name.isalpha():
+            return name
             break
         print ("Invalid input! All characters should be alphabet letters (a-z)")
-    
+
+def validate_l_name():
+    while True:
+        name = input("What is the client last name?\n\n").lower()
+        
+        if name.isalpha():
+            return last_name
+            break
+        print ("Invalid input! All characters should be alphabet letters (a-z)")
+      
 
 initial_screen()
-
