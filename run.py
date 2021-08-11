@@ -31,7 +31,7 @@ def initial_screen():
 
     while True:
         nclient_or_eclient = input(
-            'Hit "n" to new client or "e" for existing client:\n\n'
+            'Hit "n" to add new client or "e" for existing client:\n\n'
         )
         nclient_or_eclient = nclient_or_eclient.lower()
 
@@ -46,9 +46,26 @@ def initial_screen():
         print('\nInvalid entry, please try again\n')
 
 def new_client():
-    print("new client function")
+    """
+    Function to let user continue with add new client or go back,
+    for example if a user entered the wrong input
+    """
+    print("\nLet's add a new client...\n")
+    print('User data will be saved to our database upon confirmation.\n\n')
+    new_or_back = input(
+        'Hit "1" to continue or any other key to go back.\n\n'
+        )
+    if new_or_back == "1":
+        #  Initiate the adding process if user chooses to continue
+        get_client_details()
+
+    else:
+        initial_screen()
 
 def existing_client():
     print("existing client function")
+
+def get_client_details():
+    print("\nLet's get client informations")
 
 initial_screen()
