@@ -11,7 +11,7 @@ def validate_name():
         if name.isalpha():
             return name
             break
-        print ("Invalid input! All characters should be alphabet letters (a-z)")
+        print ("\nInvalid input! All characters should be alphabet letters (a-z)")
 
 def validate_l_name():
     while True:
@@ -20,7 +20,7 @@ def validate_l_name():
         if last_name.isalpha():
             return last_name
             break
-        print ("Invalid input! All characters should be alphabet letters (a-z)")
+        print ("\nInvalid input! All characters should be alphabet letters (a-z)")
 
 def validate_gender():
     while True:
@@ -37,15 +37,25 @@ def validate_gender():
 
 def validate_height():
     while True:
-        height = input("Client height (KG) ? It MUST be in KG\n\n")
+        height = input("Client height (KG) ? It MUST be in Centimeters!!\n\n")
         
         if height.isnumeric():
             return int(height)
             break
-        print ("Invalid input! All characters should be numbers (1-10)")
+        print ("\nInvalid input! All characters should be numbers (1-10)")
+
+def validate_weight():
+    while True:
+        weight = input("Client weight (kg) ? It MUST be in Kilogram!!\n\n")
+        
+        if weight.isnumeric():
+            return int(weight)
+            break
+        print ("\nInvalid input! All characters should be numbers (1-10)")
 
 
-validate_height()
+
+validate_weight()
 # example = Client(validate_name(), validate_l_name())
 # print(example.name)
 
