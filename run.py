@@ -81,9 +81,9 @@ def validate_name():
 
 def validate_l_name():
     while True:
-        name = input("What is the client last name?\n\n").lower()
+        last_name = input("What is the client last name?\n\n").lower()
         
-        if name.isalpha():
+        if last_name.isalpha():
             return last_name
             break
         print ("Invalid input! All characters should be alphabet letters (a-z)")

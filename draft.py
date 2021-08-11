@@ -6,7 +6,7 @@ class Client:
 
 def validate_name():
     while True:
-        name = input("What is the client name?\n\n").lower()
+        name = input("Client name?\n\n").lower()
         
         if name.isalpha():
             return name
@@ -15,13 +15,38 @@ def validate_name():
 
 def validate_l_name():
     while True:
-        name = input("What is the client last name?\n\n").lower()
+        last_name = input("Client last name?\n\n").lower()
         
-        if name.isalpha():
+        if last_name.isalpha():
             return last_name
             break
         print ("Invalid input! All characters should be alphabet letters (a-z)")
-    
-Client(validate_name(), validate_l_name())
-print(Client)
 
+def validate_gender():
+    while True:
+        gender = input("Client gender?  hit 'f' for female or 'm' for male\n\n")
+
+        if gender == "f":
+            return gender
+            break
+        elif gender == "m":
+            return gender
+            break
+        else:
+            print("Invalid input!")
+
+def validate_height():
+    while True:
+        height = input("Client height (KG) ? It MUST be in KG\n\n")
+        
+        if height.isnumeric():
+            return int(height)
+            break
+        print ("Invalid input! All characters should be numbers (1-10)")
+
+
+validate_height()
+# example = Client(validate_name(), validate_l_name())
+# print(example.name)
+
+ 
