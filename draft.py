@@ -62,9 +62,37 @@ def validate_age():
             break
         print ("\nInvalid input! All characters should be numbers (1-10)")
 
+def act_level():
+    print("Client Activite Level? Digit one of the following options\n")
+    print(" `1.2` for sedentary (little or no exercise)")
+    print(" `1.375` for lightly active (light exercise/sports 1-3 days/week)")
+    print(" `1.55` for moderately active (moderate exercise/sports 3-5 days/week")
+    print(" `1.725` for very active (hard exercise/sports 6-7 days a week)")
+    print(" `1.9` for extra active (very hard exercise/sports & physical job or 2x training)")
+    
+    while True:
+        activite = input()
 
-validate_age()
+        if activite == "1.2":
+            return float(activite)
+            break
+        elif activite == "1.375":
+            return float(activite)
+            break
+        elif activite == "1.55":
+            return float(activite)
+            break
+        elif activite == "1.725":
+            return float(activite)
+            break
+        elif activite == "1.9":
+            return float(activite)
+            break
+        else:
+            print("Invalid input!")
+
+act_level()
 # example = Client(validate_name(), validate_l_name())
 # print(example.name)
-
+ 
  
