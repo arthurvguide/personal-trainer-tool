@@ -1,8 +1,12 @@
 class Client:
-    def __init__(self, name, last_name):
+    def __init__(self, name, last_name, gender, height, weight, age, act_level):
         self.name = name
         self.last_name = last_name
-
+        self.gender = gender
+        self.height = height
+        self.weight = weight
+        self.age = age
+        self.act_level = act_level
 
 def validate_name():
     while True:
@@ -62,7 +66,7 @@ def validate_age():
             break
         print ("\nInvalid input! All characters should be numbers (1-10)")
 
-def act_level():
+def activite_level():
     print("Client Activite Level? Digit one of the following options\n")
     print(" `1.2` for sedentary (little or no exercise)")
     print(" `1.375` for lightly active (light exercise/sports 1-3 days/week)")
@@ -91,8 +95,7 @@ def act_level():
         else:
             print("Invalid input!")
 
-act_level()
-# example = Client(validate_name(), validate_l_name())
-# print(example.name)
- 
+
+new_client = Client(validate_name(),validate_l_name(), validate_gender(), validate_height(), validate_weight(), validate_age(), activite_level())
+print(new_client.act_level)
  
