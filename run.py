@@ -51,7 +51,7 @@ def new_client():
     for example if a user entered the wrong input
     """
     print("\nLet's add a new client...\n")
-    print('User data will be saved to our database upon confirmation.\n\n')
+    print('Client data will be saved to our database upon confirmation.\n\n')
     new_or_back = input(
         'Hit "1" to continue or any other key to go back.\n\n'
         )
@@ -66,6 +66,17 @@ def existing_client():
     print("existing client function")
 
 def get_client_details():
-    print("\nLet's get client informations")
+    print("\nLet's get client informations...\n")
+    get_name()
+    
+  
+def get_name():
+    while True:
+        name = input("What is the client name?\n\n").lower()
+        if name.isalpha():
+            break
+        print ("Invalid input! All characters should be alphabet letters (a-z)")
+    
 
 initial_screen()
+
