@@ -53,9 +53,17 @@ def validate_weight():
             break
         print ("\nInvalid input! All characters should be numbers (1-10)")
 
+def validate_age():
+    while True:
+        age = input("Client Age?\n")
+        
+        if age.isnumeric():
+            return int(age)
+            break
+        print ("\nInvalid input! All characters should be numbers (1-10)")
 
 
-validate_weight()
+validate_age()
 # example = Client(validate_name(), validate_l_name())
 # print(example.name)
 
