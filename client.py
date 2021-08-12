@@ -47,7 +47,7 @@ def validate_gender():
 
 def validate_height():
     while True:
-        height = input("Client height (KG) ? It MUST be in Centimeters!!\n\n")
+        height = input("Client height (CM) ? It MUST be in Centimeters!!\n\n")
         
         if height.isnumeric():
             return int(height)

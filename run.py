@@ -65,13 +65,43 @@ def existing_client():
     print("existing client function")
 
 def process_client_details():
+    
     print("\nLet's get client personal data...\n")
     new_client = Client(validate_name(),validate_l_name(), validate_gender(), validate_height(), validate_weight(), validate_age(), activite_level())
     print("\n\nProcessing New Client data...\n\n ")
     print(new_client.description())
-    print("Client succesfully created!")
+    print("Client succesfully created!\n")
+    # update_worksheet()
+    print("Saving client to our database...\n")
+    print("Client succesfully saved!")
+    # check_Imi()
+    # give_diet()
+
+def check_bmi(name, weight, height):
+    print("-------------------------\n")
+    print("Let's calculate their BMI")
+    print("BMI (body mass index) is a measure of whether you're a healthy weight for your height\n")
+    bmi_check = weight / (height/100)**2
+    bmi = round(bmi_check,1)
+    print(f"{name} BMI is: {bmi}\n")
+
+    if bmi <= 18.4:
+        print(f"{name} is underweight.")
+    elif bmi <= 24.9:
+        print(f"{name} is healthy.")
+    elif bmi <= 29.9:
+        print(f"{name} is over weight.")
+    elif bmi <= 34.9:
+        print(f"{name} is severely over weight.")
+    elif bmi <= 39.9:
+        print(f"{name} is obese.")
+    else:
+        print(f"{name} is severely obese.")
     
-    
-initial_screen()
+    return bmi
+#initial_screen()
+
+bmi = check_bmi("Arthur", 75, 180)
+print(bmi)
 
 
