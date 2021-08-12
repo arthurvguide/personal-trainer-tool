@@ -75,7 +75,7 @@ def process_client_details():
     print("Saving client to our database...\n")
     print("Client succesfully saved!")
     # check_Imi()
-    # give_diet()
+    # check_bmr()
 
 def check_bmi(name, weight, height):
     print("-------------------------\n")
@@ -99,9 +99,30 @@ def check_bmi(name, weight, height):
         print(f"{name} is severely obese.")
     
     return bmi
+
+def check_bmr(gender, weight, height, age):
+    print("-------------------------\n")
+    print("Let's calculate their (BMR)")
+    print("BMR (Basal metabolic rate) is the amount of energy expended per day at rest.")
+    print("This is fundamental to decide either if it is needed to consume more or less KCAL per day, depending on the client objective")
+
+    """
+    Calculating BMR formula
+    Male
+    10 x weight (kg) + 6.25 x height (cm) – 5 x age (y) + 5
+    Female
+    10 x weight (kg) + 6.25 x height (cm) – 5 x age (y) – 161
+    """
+    if gender == "m":
+        bmr = 10 * weight + 6.25 * height - 5 * age + 5
+    else:
+        bmr = 10 * weight + 6.25 * height - 5 * age - 161
+    
+    print(bmr)
+
 #initial_screen()
+# bmi = check_bmi("Arthur", 75, 180)
+# print(bmi)
 
-bmi = check_bmi("Arthur", 75, 180)
-print(bmi)
-
+check_bmr("f", 74, 176, 21)
 
