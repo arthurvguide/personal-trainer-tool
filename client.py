@@ -12,7 +12,7 @@ class Client:
         """
         Describes the instance of the new Client
         """
-        return f"Name: {self.name}, Last name: {self.last_name}, Gender: {self.gender}, Height: {self.height}, Weight: {self.weight}, Age: {self.age}, Activite level: {self.act_level}"
+        return f"Name: {self.name}, Last Name: {self.last_name}, Gender: {self.gender}, Height: {self.height}, Weight: {self.weight}, Age: {self.age}, Activite Level: {self.act_level}"
 
 def validate_name():
     while True:
@@ -65,7 +65,7 @@ def validate_weight():
 
 def validate_age():
     while True:
-        age = input("Client Age?\n")
+        age = input("Client Age?\n\n")
         
         if age.isnumeric():
             return int(age)

@@ -71,12 +71,24 @@ def process_client_details():
     print("\n\nProcessing New Client data...\n\n ")
     print(new_client.description())
     print("Client succesfully created!\n")
+   
+    """
+    Passing Client input values for variables, making this possible to interact with them.
+    """
+    name = new_client.name
+    last_name = new_client.last_name
+    gender = new_client.gender
+    height = new_client.height
+    weight = new_client.weight
+    age = new_client.age
+    act_level = new_client.act_level
+    
     # update_worksheet()
     # print("Saving client to our database...\n")
-    print("Client succesfully saved!")
-    # check_Imi()
-    # check_bmr()
-
+    # print("Client succesfully saved!")
+    bmi = check_bmi(name, weight, height)
+    #check_bmr()
+    
 def check_bmi(name, weight, height):
     print("-------------------------\n")
     print("Let's calculate their BMI")
@@ -98,7 +110,6 @@ def check_bmi(name, weight, height):
     else:
         print(f"{name} is severely obese.")
     
-    return bmi
 
 def check_bmr(gender, weight, height, age):
     print("-------------------------\n")
@@ -137,16 +148,11 @@ def create_diet(bmr, act_level):
     mantain = real_bmr 
     gain = real_bmr * 1.15
     loss = real_bmr * 0.85
-    
-    print(mantain)
-    print(gain)
-    print(loss)
-
-
-#initial_screen()
+ 
+initial_screen()
 # bmi = check_bmi("Arthur", 75, 180)
 # print(bmi)
 
 #bmr = check_bmr("f", 74, 176, 21)
 
-creat_diet(1740, 1.2)
+# creat_diet(1740, 1.2)
