@@ -73,7 +73,7 @@ def process_client_details():
     print("Client succesfully created!\n")
    
     """
-    Passing Client input values for variables, making this possible to interact with them.
+    Passing Client input values into variables, making this possible to interact with them.
     """
     name = new_client.name
     last_name = new_client.last_name
@@ -81,17 +81,19 @@ def process_client_details():
     height = new_client.height
     weight = new_client.weight
     age = new_client.age
-    act_level = new_client.act_level
+    act_level = float(new_client.act_level)
     
     # update_worksheet()
     # print("Saving client to our database...\n")
     # print("Client succesfully saved!")
     bmi = check_bmi(name, weight, height)
-    #check_bmr()
+    bmr = check_bmr(name, gender, weight, height, age)
+    
+    diet_process = create_diet(bmr, act_level)
     
 def check_bmi(name, weight, height):
     print("-------------------------\n")
-    print("Let's calculate their BMI")
+    print("Let's calculate their (BMI)")
     print("BMI (body mass index) is a measure of whether you're a healthy weight for your height\n")
     bmi_check = weight / (height/100)**2
     bmi = round(bmi_check,1)
@@ -111,7 +113,7 @@ def check_bmi(name, weight, height):
         print(f"{name} is severely obese.")
     
 
-def check_bmr(gender, weight, height, age):
+def check_bmr(name, gender, weight, height, age):
     print("-------------------------\n")
     print("Let's calculate their (BMR)")
     print("BMR (Basal metabolic rate) is the amount of energy expended per day at rest.")
@@ -129,8 +131,9 @@ def check_bmr(gender, weight, height, age):
     else:
         bmr = 10 * weight + 6.25 * height - 5 * age - 161
     
+    print(f"{name} BMR is: {bmr}\n")
     return bmr
-
+    
 def create_diet(bmr, act_level):
     print("-------------------------\n")
     print("Let's create a daily KCAL diet")
@@ -145,9 +148,11 @@ def create_diet(bmr, act_level):
     else:
         real_bmr = bmr * 1.9
     
-    mantain = real_bmr 
-    gain = real_bmr * 1.15
-    loss = real_bmr * 0.85
+    return real_bmr
+    
+    #mantain = real_bmr 
+    #gain = real_bmr * 1.15
+    #loss = real_bmr * 0.85
  
 initial_screen()
 # bmi = check_bmi("Arthur", 75, 180)
