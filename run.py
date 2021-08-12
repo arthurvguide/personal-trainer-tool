@@ -72,7 +72,7 @@ def process_client_details():
     print(new_client.description())
     print("Client succesfully created!\n")
     # update_worksheet()
-    print("Saving client to our database...\n")
+    # print("Saving client to our database...\n")
     print("Client succesfully saved!")
     # check_Imi()
     # check_bmr()
@@ -104,7 +104,7 @@ def check_bmr(gender, weight, height, age):
     print("-------------------------\n")
     print("Let's calculate their (BMR)")
     print("BMR (Basal metabolic rate) is the amount of energy expended per day at rest.")
-    print("This is fundamental to decide either if it is needed to consume more or less KCAL per day, depending on the client objective")
+    print("This is fundamental to decide either if it is needed to consume more or less KCAL per day, depending on the client objective\n")
 
     """
     Calculating BMR formula
@@ -118,11 +118,35 @@ def check_bmr(gender, weight, height, age):
     else:
         bmr = 10 * weight + 6.25 * height - 5 * age - 161
     
-    print(bmr)
+    return bmr
+
+def create_diet(bmr, act_level):
+    print("-------------------------\n")
+    print("Let's create a daily KCAL diet")
+    if act_level == 1.2:
+        real_bmr = bmr * 1.2
+    elif act_level == 1.375:
+        real_bmr = bmr * 1.375
+    elif act_level == 1.55:
+        real_bmr = bmr * 1.55
+    elif act_level == 1.725:
+        real_bmr = bmr * 1.725
+    else:
+        real_bmr = bmr * 1.9
+    
+    mantain = real_bmr 
+    gain = real_bmr * 1.15
+    loss = real_bmr * 0.85
+    
+    print(mantain)
+    print(gain)
+    print(loss)
+
 
 #initial_screen()
 # bmi = check_bmi("Arthur", 75, 180)
 # print(bmi)
 
-check_bmr("f", 74, 176, 21)
+#bmr = check_bmr("f", 74, 176, 21)
 
+creat_diet(1740, 1.2)
