@@ -8,6 +8,12 @@ class Client:
         self.age = age
         self.act_level = act_level
 
+    def description(self):
+        """
+        Describes the instance of the new Client
+        """
+        return f"Name: {self.name}, Last name: {self.last_name}, Gender: {self.gender}, Height: {self.height}, Weight: {self.weight}, Age: {self.age}, Activite level: {self.act_level}"
+
 def validate_name():
     while True:
         name = input("Client name?\n\n").lower()
@@ -94,8 +100,3 @@ def activite_level():
             break
         else:
             print("Invalid input!")
-
-
-new_client = Client(validate_name(),validate_l_name(), validate_gender(), validate_height(), validate_weight(), validate_age(), activite_level())
-print(new_client.act_level)
- 

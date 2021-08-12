@@ -2,6 +2,8 @@
 import gspread
 from google.oauth2.service_account import Credentials
 
+from client import *
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -13,10 +15,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('personal-trainer-tool')
 
-clients_data = SHEET.worksheet('clients-data')
-
-data = clients_data.get_all_values()
-
+clients_worksheet = SHEET.worksheet('clients-data')
 
 
 def initial_screen():
@@ -57,7 +56,7 @@ def new_client():
         )
     if new_or_back == "1":
         #  Initiate the adding process if user chooses to continue
-        get_client_details()
+        process_client_details()
 
     else:
         initial_screen()
@@ -65,28 +64,14 @@ def new_client():
 def existing_client():
     print("existing client function")
 
-def get_client_details():
-    print("\nLet's get client informations...\n")
-    # Criar uma class pra geral
-
-
-def validate_name():
-    while True:
-        name = input("What is the client name?\n\n").lower()
-        
-        if name.isalpha():
-            return name
-            break
-        print ("Invalid input! All characters should be alphabet letters (a-z)")
-
-def validate_l_name():
-    while True:
-        last_name = input("What is the client last name?\n\n").lower()
-        
-        if last_name.isalpha():
-            return last_name
-            break
-        print ("Invalid input! All characters should be alphabet letters (a-z)")
-      
-
+def process_client_details():
+    print("\nLet's get client personal data...\n")
+    new_client = Client(validate_name(),validate_l_name(), validate_gender(), validate_height(), validate_weight(), validate_age(), activite_level())
+    print("\n\nProcessing New Client data...\n\n ")
+    print(new_client.description())
+    print("Client succesfully created!")
+    
+    
 initial_screen()
+
+
