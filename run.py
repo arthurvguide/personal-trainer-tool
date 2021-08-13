@@ -89,7 +89,16 @@ def process_client_details():
     bmi = check_bmi(name, weight, height)
     bmr = check_bmr(name, gender, weight, height, age)
     
-    diet_process = create_diet(bmr, act_level)
+    diet_process = create_diet(name, bmr, act_level)
+
+    loss = diet_process * 0.85
+    mantain = diet_process
+    gain = diet_process * 1.15
+
+    print(f"For WEIGHT LOSS we recommend: {loss} KCAL daily.")
+    print(f"For MANTAIN WEIGHT recommend: {mantain} KCAL daily.")
+    print(f"For WEIGHT GAIN we recommend: {gain} KCAL daily.")
+
     
 def check_bmi(name, weight, height):
     print("-------------------------\n")
@@ -134,7 +143,7 @@ def check_bmr(name, gender, weight, height, age):
     print(f"{name} BMR is: {bmr}\n")
     return bmr
     
-def create_diet(bmr, act_level):
+def create_diet(name, bmr, act_level):
     print("-------------------------\n")
     print("Let's create a daily KCAL diet")
     if act_level == 1.2:
@@ -148,6 +157,7 @@ def create_diet(bmr, act_level):
     else:
         real_bmr = bmr * 1.9
     
+    print(f"Processing {name} diet...\n\n")
     return real_bmr
     
     #mantain = real_bmr 
