@@ -67,19 +67,26 @@ def new_client():
 def existing_client():
     print("\nHit one of the following options")
     print("\n1 - Consult client details")
-    print("2 - Update client details ")
-    print("3 - Exit")
+    print("2 - Exit\n")
     option = input()
     while True:
         if option == "1":
             consult_client()
-            return False
+            while True:
+                print("\nHit one of the following options")
+                print("1 - Update client details ")
+                print("2 - Exit\n")
+                option2 = input()
+                if option2 == "1":
+                    update_client()
+                    return False 
+                if option2 == "2":
+                    print("\nThank you!")
+                    return False
+                print('\nInvalid entry, please try again\n')
+        return False
         
         if option == "2":
-            update_client()
-            return False
-        
-        if option == "3":
             print("\nThank you!")
             return False
         
@@ -209,8 +216,8 @@ def create_id():
     id = random
     return id
 
-def consult_client(id):
-    #client_id = input("Please, what is the client ID?")
+def consult_client():
+    id = input("\nPlease, what is the client ID?\n\n")
     r = 1
     while worksheet.cell(r, 1).value != id:
         r += 1
@@ -236,9 +243,9 @@ def consult_client(id):
     print(f"For MANTAIN WEIGHT it's recommended: {mantain} KCAL daily.")
     print(f"For WEIGHT GAIN it's recommended: {gain} KCAL daily.")
 
-#initial_screen()
+def update_client():
+    print("Update Client function")
 
-#consult_client()
+initial_screen()
 
-consult_client("123456")
 
