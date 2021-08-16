@@ -65,7 +65,26 @@ def new_client():
         initial_screen()
 
 def existing_client():
-    print("existing client function")
+    print("\nHit one of the following options")
+    print("\n1 - Consult client details")
+    print("2 - Update client details ")
+    print("3 - Exit")
+    option = input()
+    while True:
+        if option == "1":
+            consult_client()
+            return False
+        
+        if option == "2":
+            update_client()
+            return False
+        
+        if option == "3":
+            print("\nThank you!")
+            return False
+        
+        print('\nInvalid entry, please try again\n')
+
 
 def process_client_details():
     
