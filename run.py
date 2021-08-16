@@ -117,9 +117,9 @@ def process_client_details():
     mantain = int(diet_process)
     gain = int(diet_process * 1.15)
 
-    print(f"For WEIGHT LOSS we recommend: {loss} KCAL daily.")
-    print(f"For MANTAIN WEIGHT recommend: {mantain} KCAL daily.")
-    print(f"For WEIGHT GAIN we recommend: {gain} KCAL daily.")
+    print(f"For WEIGHT LOSS it's recommended: {loss} KCAL daily.")
+    print(f"For MANTAIN WEIGHT it's recommended: {mantain} KCAL daily.")
+    print(f"For WEIGHT GAIN it's recommended: {gain} KCAL daily.")
     save_to_worksheet(id, name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain)
     
 def check_bmi(name, weight, height):
@@ -209,5 +209,36 @@ def create_id():
     id = random
     return id
 
-initial_screen()
+def consult_client(id):
+    #client_id = input("Please, what is the client ID?")
+    r = 1
+    while worksheet.cell(r, 1).value != id:
+        r += 1
+    
+    find_client = worksheet.row_values(r)
+
+    client_id = find_client[0] 
+    name = find_client[1] 
+    last_name = find_client[2] 
+    gender = find_client[3] 
+    height = find_client[4] 
+    weight = find_client[5] 
+    age = find_client[6] 
+    act_level = find_client[7] 
+    bmi = find_client[8] 
+    bmr = find_client[8] 
+    loss = find_client[10] 
+    mantain = find_client[11]
+    gain = find_client[12] 
+
+    print(f"Name: {name}, Last Name: {last_name}, Gender: {gender}, Height: {height}, Weight: {weight}, Age: {age}, Activite Level: {act_level}\n\n")
+    print(f"For WEIGHT LOSS it's recommended: {loss} KCAL daily.")
+    print(f"For MANTAIN WEIGHT it's recommended: {mantain} KCAL daily.")
+    print(f"For WEIGHT GAIN it's recommended: {gain} KCAL daily.")
+
+#initial_screen()
+
+#consult_client()
+
+consult_client("123456")
 
