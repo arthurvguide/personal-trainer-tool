@@ -78,7 +78,7 @@ def activite_level():
     print(" '1.375' for lightly active (light exercise/sports 1-3 days/week)")
     print(" '1.55' for moderately active (moderate exercise/sports 3-5 days/week")
     print(" '1.725' for very active (hard exercise/sports 6-7 days a week)")
-    print(" '1.9' for extra active (very hard exercise/sports & physical job or 2x training)")
+    print(" '1.9' for extra active (very hard exercise/sports & physical job)")
     
     while True:
         activite = input()

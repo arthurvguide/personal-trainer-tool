@@ -2,6 +2,9 @@
 import gspread
 from google.oauth2.service_account import Credentials
 
+import string
+from random import choice
+
 from client import *
 
 SCOPE = [
@@ -83,6 +86,8 @@ def process_client_details():
     age = new_client.age 
     act_level = float(new_client.act_level)
     
+    id = int(create_id())
+    
     bmi = check_bmi(name, weight, height)
     next()
     bmr = check_bmr(name, gender, weight, height, age)
@@ -96,7 +101,7 @@ def process_client_details():
     print(f"For WEIGHT LOSS we recommend: {loss} KCAL daily.")
     print(f"For MANTAIN WEIGHT recommend: {mantain} KCAL daily.")
     print(f"For WEIGHT GAIN we recommend: {gain} KCAL daily.")
-    save_to_worksheet(name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain)
+    save_to_worksheet(id, name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain)
     
 def check_bmi(name, weight, height):
     print("-------------------------\n")
@@ -159,13 +164,14 @@ def create_diet(name, bmr, act_level):
     print(f"Processing {name} diet...\n\n")
     return real_bmr
 
-def save_to_worksheet(name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain):
+def save_to_worksheet(id, name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain):
     print("\nSaving client to our database...\n\n")
     
-    client_data = [name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain]
+    client_data = [id, name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain]
     worksheet.append_row(client_data)
     
-    print("Client succesfully saved!")
+    print("Client succesfully saved!\n")
+    print("Thank You!")
 
 def next():
     while True:
@@ -177,6 +183,12 @@ def next():
         if next == "n":
             return False
         print('\nInvalid entry, please try again\n')
+
+def create_id():
+    chars = string.digits
+    random =  ''.join(choice(chars) for _ in range(6))
+    id = random
+    return id
 
 initial_screen()
 
