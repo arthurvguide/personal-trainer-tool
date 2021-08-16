@@ -15,7 +15,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('personal-trainer-tool')
 
-clients_worksheet = SHEET.worksheet('clients-data')
+worksheet = SHEET.worksheet('clients-data')
 
 
 def initial_screen():
@@ -80,12 +80,9 @@ def process_client_details():
     gender = new_client.gender
     height = new_client.height
     weight = new_client.weight
-    age = new_client.age
+    age = new_client.age 
     act_level = float(new_client.act_level)
     
-    # update_worksheet()
-    # print("Saving client to our database...\n")
-    # print("Client succesfully saved!")
     bmi = check_bmi(name, weight, height)
     bmr = check_bmr(name, gender, weight, height, age)
     
@@ -98,7 +95,7 @@ def process_client_details():
     print(f"For WEIGHT LOSS we recommend: {loss} KCAL daily.")
     print(f"For MANTAIN WEIGHT recommend: {mantain} KCAL daily.")
     print(f"For WEIGHT GAIN we recommend: {gain} KCAL daily.")
-
+    save_to_worksheet(name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain)
     
 def check_bmi(name, weight, height):
     print("-------------------------\n")
@@ -120,6 +117,7 @@ def check_bmi(name, weight, height):
         print(f"{name} is obese.")
     else:
         print(f"{name} is severely obese.")
+    return bmi
     
 
 def check_bmr(name, gender, weight, height, age):
@@ -159,10 +157,22 @@ def create_diet(name, bmr, act_level):
     
     print(f"Processing {name} diet...\n\n")
     return real_bmr
+
+def save_to_worksheet(name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain):
+    print("Saving client to our database...\n")
     
-    #mantain = real_bmr 
-    #gain = real_bmr * 1.15
-    #loss = real_bmr * 0.85
+    client_data = [name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain]
+    worksheet.append_row(client_data)
+    
+    print("Client succesfully saved!")
+
+def next_or_exit():
+     print("hi")
+
+
+#mantain = real_bmr 
+#gain = real_bmr * 1.15
+#loss = real_bmr * 0.85
  
 initial_screen()
 # bmi = check_bmi("Arthur", 75, 180)
@@ -171,3 +181,4 @@ initial_screen()
 #bmr = check_bmr("f", 74, 176, 21)
 
 # creat_diet(1740, 1.2)
+
