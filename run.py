@@ -71,7 +71,7 @@ def process_client_details():
     print("\n\nProcessing New Client data...\n\n ")
     print(new_client.description())
     print("Client succesfully created!\n")
-   
+    next()
     """
     Passing Client input values into variables, making this possible to interact with them.
     """
@@ -84,13 +84,14 @@ def process_client_details():
     act_level = float(new_client.act_level)
     
     bmi = check_bmi(name, weight, height)
+    next()
     bmr = check_bmr(name, gender, weight, height, age)
-    
+    next()
     diet_process = create_diet(name, bmr, act_level)
 
-    loss = diet_process * 0.85
-    mantain = diet_process
-    gain = diet_process * 1.15
+    loss = int(diet_process * 0.85)
+    mantain = int(diet_process)
+    gain = int(diet_process * 1.15)
 
     print(f"For WEIGHT LOSS we recommend: {loss} KCAL daily.")
     print(f"For MANTAIN WEIGHT recommend: {mantain} KCAL daily.")
@@ -106,17 +107,17 @@ def check_bmi(name, weight, height):
     print(f"{name} BMI is: {bmi}\n")
 
     if bmi <= 18.4:
-        print(f"{name} is underweight.")
+        print(f"{name} is underweight.\n")
     elif bmi <= 24.9:
-        print(f"{name} is healthy.")
+        print(f"{name} is healthy.\n")
     elif bmi <= 29.9:
-        print(f"{name} is over weight.")
+        print(f"{name} is over weight.\n")
     elif bmi <= 34.9:
-        print(f"{name} is severely over weight.")
+        print(f"{name} is severely over weight.\n")
     elif bmi <= 39.9:
-        print(f"{name} is obese.")
+        print(f"{name} is obese.\n")
     else:
-        print(f"{name} is severely obese.")
+        print(f"{name} is severely obese.\n")
     return bmi
     
 
@@ -159,26 +160,23 @@ def create_diet(name, bmr, act_level):
     return real_bmr
 
 def save_to_worksheet(name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain):
-    print("Saving client to our database...\n")
+    print("\nSaving client to our database...\n\n")
     
     client_data = [name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain]
     worksheet.append_row(client_data)
     
     print("Client succesfully saved!")
 
-def next_or_exit():
-     print("hi")
+def next():
+    while True:
+        next = input(
+            'Hit "n" to next\n\n'
+        )
+        next.lower()
 
+        if next == "n":
+            return False
+        print('\nInvalid entry, please try again\n')
 
-#mantain = real_bmr 
-#gain = real_bmr * 1.15
-#loss = real_bmr * 0.85
- 
 initial_screen()
-# bmi = check_bmi("Arthur", 75, 180)
-# print(bmi)
-
-#bmr = check_bmr("f", 74, 176, 21)
-
-# creat_diet(1740, 1.2)
 
