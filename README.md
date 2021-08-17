@@ -13,7 +13,7 @@
 ---
 
 # Table of contents
- 1. [Project Goals](#project-goals)
+1. [Project Goals](#project-goals)
 2. [User Goals](#user-goals)
 3. [Structure](#structure)
     1. [Initial Screen](#inital-screen)
@@ -46,6 +46,22 @@
     4. [Google API](#google-api)
 13. [Credits](#credits)
 
+## Project Goals
+ The project goals are:
+  - Create an app for health professionals to check client health and weight status
+  - Create an app for health professionals to track their clients and help them to achieve their goals
+  - Create an app that calculates BMI ( Body Mass Index), BMR (Basal Metabolic Rate)
+  - Create an app that creates diets for specific objective (maintain, loss or gain weight)
+  - Create and update a worksheet for the professionals to track their clients easily
+  - Automate calculations
 
+## User Goal
+ The user goals are:
+  - Input client details and get their BMI ( Body Mass Index), BMR (Basal Metabolic Rate)
+  - Creat diets for their clients 
+  - Save client details into a worksheet
+  - Update client details and get new diets
+  - Check client health and weight status
  
+ [Back to Table of contents](#table-of-contents)
 
