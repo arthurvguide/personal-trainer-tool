@@ -4,7 +4,10 @@ from google.oauth2.service_account import Credentials
 import string
 from random import choice
 
-from client import *
+from client import Client, validate_id
+from client import validate_name, validate_l_name
+from client import validate_gender, validate_height
+from client import validate_weight, validate_age, activite_level
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
