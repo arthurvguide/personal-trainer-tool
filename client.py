@@ -28,7 +28,6 @@ def validate_name():
         name = input("Client name?\n\n").lower()
         if name.isalpha():
             return name
-            break
         print("\nInvalid input! All characters should be alphabet letters")
 
 
@@ -40,7 +39,6 @@ def validate_l_name():
         last_name = input("Client last name?\n\n").lower()
         if last_name.isalpha():
             return last_name
-            break
         print("\nInvalid input! All characters should be alphabet letters")
 
 
@@ -53,10 +51,8 @@ def validate_gender():
 
         if gender == "f":
             return gender
-            break
         elif gender == "m":
             return gender
-            break
         else:
             print("Invalid input!")
 
@@ -69,7 +65,6 @@ def validate_height():
         height = input("Client height (CM) ? It MUST be in Centimeters!!\n\n")
         if height.isnumeric():
             return int(height)
-            break
         print("\nInvalid input! All characters should be numbers (1-10)")
 
 
@@ -81,7 +76,6 @@ def validate_weight():
         weight = input("Client weight (kg) ? It MUST be in Kilogram!!\n\n")
         if weight.isnumeric():
             return int(weight)
-            break
         print("\nInvalid input! All characters should be numbers (1-10)")
 
 
@@ -93,7 +87,6 @@ def validate_age():
         age = input("Client Age?\n\n")
         if age.isnumeric():
             return int(age)
-            break
         print("\nInvalid input! All characters should be numbers (1-10)")
 
 
@@ -112,18 +105,24 @@ def activite_level():
 
         if activite == "1.2":
             return float(activite)
-            break
         elif activite == "1.375":
             return float(activite)
-            break
         elif activite == "1.55":
             return float(activite)
-            break
         elif activite == "1.725":
             return float(activite)
-            break
         elif activite == "1.9":
             return float(activite)
-            break
         else:
             print("Invalid input!")
+
+def validate_id(all_ids):
+    """
+    Function to validate id input
+    """
+    while True:
+        id = input("\nPlease, what is the client ID?\n\n")
+        if id in all_ids:
+            return id
+        print("\nInvalid ID! Try Again")
+        print("It must be 6 numbers")

@@ -263,7 +263,10 @@ def consult_client():
     if requested, update the client details, or return
     to inital screen.
     """
-    id = input("\nPlease, what is the client ID?\n\n")
+    # Getting all ID`s
+    all_ids = worksheet.col_values(1)
+    # Get id input and validating
+    id = validate_id(all_ids)
 
     # "r" is the row of the worksheet where is based the existing client
     # details, comparing the ID inserted I can find out the row number.
@@ -291,7 +294,7 @@ def consult_client():
     gain = find_client[12]
 
     # Show up informations of the client selected
-    print(f"The currently deatails we have from {name} are:\n\n")
+    print(f"The currently details we have from {name} are:\n\n")
     print(f"Name: {name}, Last Name: {last_name}, Gender: {gender}")
     print(f"Height: {height}, Weight: {weight}, Age: {age}")
     print(f"Activite Level: {act_level}")
