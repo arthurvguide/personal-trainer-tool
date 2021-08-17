@@ -72,24 +72,11 @@ def existing_client():
     while True:
         if option == "1":
             consult_client()
-            while True:
-                print("\nHit one of the following options")
-                print("1 - Update client details ")
-                print("2 - Exit\n")
-                option2 = input()
-                if option2 == "1":
-                    update_client()
-                    return False 
-                if option2 == "2":
-                    print("\nThank you!")
-                    return False
-                print('\nInvalid entry, please try again\n')
-        return False
+            return False
         
         if option == "2":
             print("\nThank you!")
             return False
-        
         print('\nInvalid entry, please try again\n')
 
 
@@ -156,8 +143,8 @@ def check_bmr(name, gender, weight, height, age):
     print("-------------------------\n")
     print("Let's calculate their (BMR)")
     print("BMR (Basal metabolic rate) is the amount of energy expended per day at rest.")
-    print("This is fundamental to decide either if it is needed to consume more or less KCAL per day, depending on the client objective\n")
-
+    print("This is fundamental to decide either if it is needed to consume" ) 
+    print("more or less KCAL per day, depending on the client objective\n")
     """
     Calculating BMR formula
     Male
@@ -243,8 +230,55 @@ def consult_client():
     print(f"For MANTAIN WEIGHT it's recommended: {mantain} KCAL daily.")
     print(f"For WEIGHT GAIN it's recommended: {gain} KCAL daily.")
 
-def update_client():
-    print("Update Client function")
+    update_client(name ,height, weight, age, act_level, gender, r)
+
+def update_client(name ,height, weight, age, act_level, gender, r):
+
+    print(f"\n\nLets update {name}'s details\n")
+    height = validate_height()
+    weight = validate_weight()
+    age = validate_age()
+    act_level = activite_level()
+        
+    bmi = check_bmi(name, weight, height)
+    next()
+    bmr = check_bmr(name, gender, weight, height, age)
+    next()
+    diet_process = create_diet(name, bmr, act_level)
+
+    loss = int(diet_process * 0.85)
+    mantain = int(diet_process)
+    gain = int(diet_process * 1.15)
+
+    """
+    Update worksheet with all new informations collected at the right client row/id
+    """
+
+    worksheet.update_cell(r, 5, height)
+    worksheet.update_cell(r, 6, weight)
+    worksheet.update_cell(r, 7, age)
+    worksheet.update_cell(r, 8, act_level)
+    worksheet.update_cell(r, 9, bmi)
+    worksheet.update_cell(r, 10, bmr)
+    worksheet.update_cell(r, 11, loss)
+    worksheet.update_cell(r, 12, mantain)
+    worksheet.update_cell(r, 13, gain)
+
+def update_or_exit():
+    print("\nHit one of the following options")
+    print("\n1 - Update client details")
+    print("2 - Exit\n")
+    option = input()
+    while True:
+        if option == "1":
+            print("Update options was selected...\n\n")
+            return False
+        
+        if option == "2":
+            print("\nThank you!")
+            return False
+        print('\nInvalid entry, please try again\n')
+
 
 initial_screen()
 
