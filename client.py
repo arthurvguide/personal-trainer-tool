@@ -26,7 +26,6 @@ def validate_name():
     """
     while True:
         name = input("Client name?\n\n").lower()
-        
         if name.isalpha():
             return name
             break
@@ -39,7 +38,6 @@ def validate_l_name():
     """
     while True:
         last_name = input("Client last name?\n\n").lower()
-        
         if last_name.isalpha():
             return last_name
             break
@@ -69,7 +67,6 @@ def validate_height():
     """
     while True:
         height = input("Client height (CM) ? It MUST be in Centimeters!!\n\n")
-        
         if height.isnumeric():
             return int(height)
             break
@@ -82,7 +79,6 @@ def validate_weight():
     """
     while True:
         weight = input("Client weight (kg) ? It MUST be in Kilogram!!\n\n")
-        
         if weight.isnumeric():
             return int(weight)
             break
@@ -95,7 +91,6 @@ def validate_age():
     """
     while True:
         age = input("Client Age?\n\n")
-        
         if age.isnumeric():
             return int(age)
             break
@@ -112,7 +107,6 @@ def activite_level():
     print("'1.55' for moderately active (moderate exercise 3-5 days/week")
     print(" '1.725' for very active (hard exercise/sports 6-7 days a week)")
     print(" '1.9' for extra active (very hard exercise/sports & physical job)")
-    
     while True:
         activite = input()
 
@@ -133,4 +127,3 @@ def activite_level():
             break
         else:
             print("Invalid input!")
-            
