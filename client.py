@@ -2,7 +2,8 @@ class Client:
     """
     A class used to represent an Client
     """
-    def __init__(self, name, last_name, gender, height, weight, age, act_level):
+    def __init__(self, name, last_name, gender,
+                 height, weight, age, act_level):
         self.name = name
         self.last_name = last_name
         self.gender = gender
@@ -15,8 +16,10 @@ class Client:
         """
         Describes the instance of the new Client
         """
-        print(f"Name: {self.name}, Last Name: {self.last_name}, Gender: {self.gender}")
-        print(f"Height: {self.height}, Weight: {self.weight}, Age: {self.age}, Activite Level: {self.act_level}")
+        print(f"Name: {self.name}, Last Name: {self.last_name}")
+        print(f"Gender: {self.gender}")
+        print(f"Height: {self.height}, Weight: {self.weight}")
+        print(f"Age: {self.age}, Activite Level: {self.act_level}")
         return "\n\nClient succesfully created!\n"
 
 
@@ -115,6 +118,7 @@ def activite_level():
             return float(activite)
         else:
             print("Invalid input!")
+
 
 def validate_id(all_ids):
     """

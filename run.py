@@ -91,7 +91,9 @@ def process_client_details():
     the end save all data into the worksheet.
     """
     print("\nLet's get client personal data...\n")
-    new_client = Client(validate_name(), validate_l_name(), validate_gender(), validate_height(), validate_weight(), validate_age(), activite_level())
+    new_client = Client(validate_name(), validate_l_name(),
+                        validate_gender(), validate_height(),
+                        validate_weight(), validate_age(), activite_level())
     print("\n\nProcessing New Client data...\n\n ")
     print(new_client.description())
     next()
@@ -128,7 +130,10 @@ def process_client_details():
     print(f"For WEIGHT GAIN it's recommended: {gain} KCAL daily.")
 
     # save all data into the worksheet calling its function
-    save_to_worksheet(id, name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain)
+    save_to_worksheet(id, name, last_name,
+                      gender, height, weight,
+                      age, act_level, bmi, bmr,
+                      loss, mantain, gain)
 
 
 def check_bmi(name, weight, height):
@@ -213,14 +218,21 @@ def create_diet(name, bmr, act_level):
     return real_bmr
 
 
-def save_to_worksheet(id, name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain):
+def save_to_worksheet(id, name, last_name,
+                      gender, height, weight,
+                      age, act_level, bmi, bmr,
+                      loss, mantain, gain):
     """
     Function to save all client data into the worksheet
     """
     print("\nSaving client to our database...\n\n")
 
     # Pass all client data into a list and then insert into the worksheet
-    client_data = [id, name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain]
+    client_data = [id, name, last_name,
+                   gender, height, weight, age,
+                   act_level, bmi, bmr, loss,
+                   mantain, gain]
+
     worksheet.append_row(client_data)
 
     print("Client succesfully saved!\n")
