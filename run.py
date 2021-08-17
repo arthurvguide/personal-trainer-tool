@@ -225,13 +225,15 @@ def consult_client():
     mantain = find_client[11]
     gain = find_client[12] 
 
-    print(f"Name: {name}, Last Name: {last_name}, Gender: {gender}, Height: {height}, Weight: {weight}, Age: {age}, Activite Level: {act_level}\n\n")
+    print(f"The currently deatails we have from {name} are:\n\n")
+    print(f"Name: {name}, Last Name: {last_name}, Gender: {gender}")
+    print(f"Height: {height}, Weight: {weight}, Age: {age}, Activite Level: {act_level}\n\n")
     print(f"For WEIGHT LOSS it's recommended: {loss} KCAL daily.")
     print(f"For MANTAIN WEIGHT it's recommended: {mantain} KCAL daily.")
     print(f"For WEIGHT GAIN it's recommended: {gain} KCAL daily.")
 
-    update_client(name ,height, weight, age, act_level, gender, r)
-
+    update_or_exit(name ,height, weight, age, act_level, gender, r)
+    
 def update_client(name ,height, weight, age, act_level, gender, r):
 
     print(f"\n\nLets update {name}'s details\n")
@@ -250,10 +252,14 @@ def update_client(name ,height, weight, age, act_level, gender, r):
     mantain = int(diet_process)
     gain = int(diet_process * 1.15)
 
+    print(f"The new diet for {name} is:\n\n")
+    print(f"For WEIGHT LOSS it's recommended: {loss} KCAL daily.")
+    print(f"For MANTAIN WEIGHT it's recommended: {mantain} KCAL daily.")
+    print(f"For WEIGHT GAIN it's recommended: {gain} KCAL daily.\n\n")
+    
     """
     Update worksheet with all new informations collected at the right client row/id
     """
-
     worksheet.update_cell(r, 5, height)
     worksheet.update_cell(r, 6, weight)
     worksheet.update_cell(r, 7, age)
@@ -264,14 +270,18 @@ def update_client(name ,height, weight, age, act_level, gender, r):
     worksheet.update_cell(r, 12, mantain)
     worksheet.update_cell(r, 13, gain)
 
-def update_or_exit():
+    print(f"{name} was successfully updated")
+    print("Thank You!")
+
+
+def update_or_exit(name ,height, weight, age, act_level, gender, r):
     print("\nHit one of the following options")
     print("\n1 - Update client details")
     print("2 - Exit\n")
     option = input()
     while True:
         if option == "1":
-            print("Update options was selected...\n\n")
+            update_client(name ,height, weight, age, act_level, gender, r)
             return False
         
         if option == "2":
