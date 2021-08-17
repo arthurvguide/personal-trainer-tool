@@ -47,6 +47,7 @@ def initial_screen():
 
         print('\nInvalid entry, please try again\n')
 
+
 def new_client():
     """
     Function to let user continue with add new client or go back,
@@ -63,6 +64,7 @@ def new_client():
 
     else:
         initial_screen()
+
 
 def existing_client():
     """
@@ -91,10 +93,9 @@ def process_client_details():
     the end save all data into the worksheet.
     """
     print("\nLet's get client personal data...\n")
-    new_client = Client(validate_name(),validate_l_name(), validate_gender(), validate_height(), validate_weight(), validate_age(), activite_level())
+    new_client = Client(validate_name(), validate_l_name(), validate_gender(), validate_height(), validate_weight(), validate_age(), activite_level())
     print("\n\nProcessing New Client data...\n\n ")
     print(new_client.description())
-    print("Client succesfully created!\n")
     next()
     
     # Passing Client input values into separate variables, making this possible
@@ -120,9 +121,9 @@ def process_client_details():
     
     # Calculate the diet calling its function and display the result at the end
     diet_process = create_diet(name, bmr, act_level)
-    loss = int(diet_process * 0.85) # less 15% KCAL daily to loss weight
+    loss = int(diet_process * 0.85)  # less 15% KCAL daily to loss weight
     mantain = int(diet_process)
-    gain = int(diet_process * 1.15) # more 15% KCAL daily to gain weight
+    gain = int(diet_process * 1.15)  # more 15% KCAL daily to gain weight
 
     print(f"For WEIGHT LOSS it's recommended: {loss} KCAL daily.")
     print(f"For MANTAIN WEIGHT it's recommended: {mantain} KCAL daily.")
@@ -130,6 +131,7 @@ def process_client_details():
 
     # save all data into the worksheet calling its function
     save_to_worksheet(id, name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain)
+
     
 def check_bmi(name, weight, height):
     """
@@ -141,7 +143,7 @@ def check_bmi(name, weight, height):
     
     # Calculate the BMI and show up to the user
     bmi_check = weight / (height/100)**2
-    bmi = round(bmi_check,1)  # only 1 decimal 
+    bmi = round(bmi_check, 1)  # only 1 decimal 
     print(f"{name} BMI is: {bmi}\n")
 
     # Condition to check if client is helthy or not
@@ -168,7 +170,7 @@ def check_bmr(name, gender, weight, height, age):
     print("-------------------------\n")
     print("Let's calculate their (BMR)")
     print("BMR (Basal metabolic rate) is the amount of energy expended per day at rest.")
-    print("This is fundamental to decide either if it is needed to consume" ) 
+    print("This is fundamental to decide either if it is needed to consume") 
     print("more or less KCAL per day, depending on the client objective\n")
     
     # Calculating BMR formula
@@ -185,6 +187,7 @@ def check_bmr(name, gender, weight, height, age):
     print(f"{name} BMR is: {bmr}\n")
     return bmr
     
+
 def create_diet(name, bmr, act_level):
     """
     Function to calculate the real KCAL consume of client
@@ -209,6 +212,7 @@ def create_diet(name, bmr, act_level):
     print(f"Processing {name} diet...\n\n")
     return real_bmr
 
+
 def save_to_worksheet(id, name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain):
     """
     Function to save all client data into the worksheet
@@ -221,6 +225,7 @@ def save_to_worksheet(id, name, last_name, gender, height, weight, age, act_leve
     
     print("Client succesfully saved!\n")
     print("Thank You!")
+
 
 def next():
     """
@@ -236,6 +241,7 @@ def next():
             return False
         print('\nInvalid entry, please try again\n')
 
+
 def create_id():
     """
     Function to creat a unique ID for each client ( 6  numbers)
@@ -246,9 +252,10 @@ def create_id():
     that ONE personal trainer has.
     """
     chars = string.digits
-    random =  ''.join(choice(chars) for _ in range(6))
+    random = ''.join(choice(chars) for _ in range(6))
     id = random
     return id
+
 
 def consult_client():
     """
@@ -258,8 +265,8 @@ def consult_client():
     """
     id = input("\nPlease, what is the client ID?\n\n")
     
-    # "r" is the row of the worksheet where is based the existing client details,
-    # comparing the ID inserted I can find out the row number.
+    # "r" is the row of the worksheet where is based the existing client 
+    # details, comparing the ID inserted I can find out the row number.
     
     r = 1 
     while worksheet.cell(r, 1).value != id:
@@ -267,10 +274,9 @@ def consult_client():
     
     find_client = worksheet.row_values(r)
 
-    # Passing Client Existing data into separate variables, making this possible
-    # to interact with them easily
+    # Passing Client Existing data into separate variables, making this
+    #  possible to interact with them easily
 
-    client_id = find_client[0] 
     name = find_client[1] 
     last_name = find_client[2] 
     gender = find_client[3] 
@@ -279,7 +285,7 @@ def consult_client():
     age = find_client[6] 
     act_level = find_client[7] 
     bmi = find_client[8] 
-    bmr = find_client[8] 
+    bmr = find_client[9] 
     loss = find_client[10] 
     mantain = find_client[11]
     gain = find_client[12] 
@@ -287,16 +293,18 @@ def consult_client():
     # Show up informations of the client selected
     print(f"The currently deatails we have from {name} are:\n\n")
     print(f"Name: {name}, Last Name: {last_name}, Gender: {gender}")
-    print(f"Height: {height}, Weight: {weight}, Age: {age}, Activite Level: {act_level}\n\n")
+    print(f"Height: {height}, Weight: {weight}, Age: {age}, Activite Level: {act_level}")
+    print(f"BMI: {bmi}, BMR: {bmr}\n\n")
     print(f"For WEIGHT LOSS it's recommended: {loss} KCAL daily.")
     print(f"For MANTAIN WEIGHT it's recommended: {mantain} KCAL daily.")
     print(f"For WEIGHT GAIN it's recommended: {gain} KCAL daily.")
 
     # User decide if wants to edit/ update currently informations, 
     # or leave the app.
-    update_or_exit(name ,height, weight, age, act_level, gender, r)
+    update_or_exit(name, height, weight, age, act_level, gender, r)
+
     
-def update_client(name ,height, weight, age, act_level, gender, r):
+def update_client(name, height, weight, age, act_level, gender, r):
     """
     Function to get and update the new inputs from the user, and then insert 
     these data into the worksheet.
@@ -305,21 +313,23 @@ def update_client(name ,height, weight, age, act_level, gender, r):
     print(f"\n\nLets update {name}'s details\n")
     
     # Collect the variabels the could have changed 
+
     height = validate_height()
     weight = validate_weight()
     age = validate_age()
     act_level = activite_level()
 
     # Calculating the new BMI, BMR and DIET using the updated data    
+
     bmi = check_bmi(name, weight, height)
     next()
     bmr = check_bmr(name, gender, weight, height, age)
     next()
     diet_process = create_diet(name, bmr, act_level)
 
-    loss = int(diet_process * 0.85) # less 15% KCAL daily to loss weight
+    loss = int(diet_process * 0.85)   # less 15% KCAL daily to loss weight
     mantain = int(diet_process)
-    gain = int(diet_process * 1.15) # more 15% KCAL daily to loss weight
+    gain = int(diet_process * 1.15)   # more 15% KCAL daily to loss weight
 
     # Show up the updated diet
     print(f"The new diet for {name} is:\n\n")
@@ -327,7 +337,7 @@ def update_client(name ,height, weight, age, act_level, gender, r):
     print(f"For MANTAIN WEIGHT it's recommended: {mantain} KCAL daily.")
     print(f"For WEIGHT GAIN it's recommended: {gain} KCAL daily.\n\n")
     
-    # Update worksheet with all new informations collected at the right client row/id
+    # Update worksheet with all new informations collected 
 
     worksheet.update_cell(r, 5, height)
     worksheet.update_cell(r, 6, weight)
@@ -343,7 +353,7 @@ def update_client(name ,height, weight, age, act_level, gender, r):
     print("Thank You!")
 
 
-def update_or_exit(name ,height, weight, age, act_level, gender, r):
+def update_or_exit(name, height, weight, age, act_level, gender, r):
     """
     Function to user decide either update cliente details, or
     exit the app.
@@ -352,16 +362,15 @@ def update_or_exit(name ,height, weight, age, act_level, gender, r):
     print("\n1 - Update client details")
     print("2 - Exit\n")
     option = input()
+
     while True:
         if option == "1":
-            update_client(name ,height, weight, age, act_level, gender, r)
+            update_client(name, height, weight, age, act_level, gender, r)
             return False
-        
         if option == "2":
             print("\nThank you!")
             return False
         print('\nInvalid entry, please try again\n')
 
 initial_screen()
-
 

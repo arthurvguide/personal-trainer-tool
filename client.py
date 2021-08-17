@@ -1,4 +1,7 @@
 class Client:
+    """
+    A class used to represent an Client
+    """
     def __init__(self, name, last_name, gender, height, weight, age, act_level):
         self.name = name
         self.last_name = last_name
@@ -14,6 +17,8 @@ class Client:
         """
         print(f"Name: {self.name}, Last Name: {self.last_name}, Gender: {self.gender}")
         print(f"Height: {self.height}, Weight: {self.weight}, Age: {self.age}, Activite Level: {self.act_level}")
+        return "\n\nClient succesfully created!\n"
+
 
 def validate_name():
     """
@@ -25,7 +30,8 @@ def validate_name():
         if name.isalpha():
             return name
             break
-        print ("\nInvalid input! All characters should be alphabet letters (a-z)")
+        print("\nInvalid input! All characters should be alphabet letters")
+
 
 def validate_l_name():
     """
@@ -37,14 +43,15 @@ def validate_l_name():
         if last_name.isalpha():
             return last_name
             break
-        print ("\nInvalid input! All characters should be alphabet letters (a-z)")
+        print("\nInvalid input! All characters should be alphabet letters")
+
 
 def validate_gender():
     """
     Function to get the gender input and validate
     """
     while True:
-        gender = input("Client gender?  hit 'f' for female or 'm' for male\n\n")
+        gender = input("Client gender?  hit 'f' for female or 'm' for male\n")
 
         if gender == "f":
             return gender
@@ -54,6 +61,7 @@ def validate_gender():
             break
         else:
             print("Invalid input!")
+
 
 def validate_height():
     """
@@ -65,7 +73,8 @@ def validate_height():
         if height.isnumeric():
             return int(height)
             break
-        print ("\nInvalid input! All characters should be numbers (1-10)")
+        print("\nInvalid input! All characters should be numbers (1-10)")
+
 
 def validate_weight():
     """
@@ -77,7 +86,8 @@ def validate_weight():
         if weight.isnumeric():
             return int(weight)
             break
-        print ("\nInvalid input! All characters should be numbers (1-10)")
+        print("\nInvalid input! All characters should be numbers (1-10)")
+
 
 def validate_age():
     """
@@ -89,7 +99,8 @@ def validate_age():
         if age.isnumeric():
             return int(age)
             break
-        print ("\nInvalid input! All characters should be numbers (1-10)")
+        print("\nInvalid input! All characters should be numbers (1-10)")
+
 
 def activite_level():
     """
@@ -97,8 +108,8 @@ def activite_level():
     """
     print("Client Activite Level? Digit one of the following options:\n")
     print(" '1.2' for sedentary (little or no exercise)")
-    print(" '1.375' for lightly active (light exercise/sports 1-3 days/week)")
-    print(" '1.55' for moderately active (moderate exercise/sports 3-5 days/week")
+    print(" '1.375' for lightly active (light exercise 1-3 days/week)")
+    print("'1.55' for moderately active (moderate exercise 3-5 days/week")
     print(" '1.725' for very active (hard exercise/sports 6-7 days a week)")
     print(" '1.9' for extra active (very hard exercise/sports & physical job)")
     
@@ -122,3 +133,4 @@ def activite_level():
             break
         else:
             print("Invalid input!")
+            
