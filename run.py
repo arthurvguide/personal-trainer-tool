@@ -65,6 +65,10 @@ def new_client():
         initial_screen()
 
 def existing_client():
+    """
+    Function to let user decide if wants to consult an
+    existing client or go back to the initial screen
+    """
     print("\nHit one of the following options")
     print("\n1 - Consult client details")
     print("2 - Exit\n")
@@ -81,16 +85,20 @@ def existing_client():
 
 
 def process_client_details():
-    
+    """
+    Function to get all input deitails from the new client already validated,
+    process all necessary calculations (calling other functions), and at
+    the end save all data into the worksheet.
+    """
     print("\nLet's get client personal data...\n")
     new_client = Client(validate_name(),validate_l_name(), validate_gender(), validate_height(), validate_weight(), validate_age(), activite_level())
     print("\n\nProcessing New Client data...\n\n ")
     print(new_client.description())
     print("Client succesfully created!\n")
     next()
-    """
-    Passing Client input values into variables, making this possible to interact with them.
-    """
+    
+    # Passing Client input values into separate variables, making this possible
+    # to interact with them.
     name = new_client.name
     last_name = new_client.last_name
     gender = new_client.gender
@@ -99,31 +107,45 @@ def process_client_details():
     age = new_client.age 
     act_level = float(new_client.act_level)
     
+    # Call the create id function and pass this to the new client
     id = int(create_id())
     
+    # Calculate the bmi calling its function and pass to the new client
     bmi = check_bmi(name, weight, height)
     next()
+
+    # Calculate the bmr calling its function and pass to the new client
     bmr = check_bmr(name, gender, weight, height, age)
     next()
+    
+    # Calculate the diet calling its function and display the result at the end
     diet_process = create_diet(name, bmr, act_level)
-
-    loss = int(diet_process * 0.85)
+    loss = int(diet_process * 0.85) # less 15% KCAL daily to loss weight
     mantain = int(diet_process)
-    gain = int(diet_process * 1.15)
+    gain = int(diet_process * 1.15) # more 15% KCAL daily to gain weight
 
     print(f"For WEIGHT LOSS it's recommended: {loss} KCAL daily.")
     print(f"For MANTAIN WEIGHT it's recommended: {mantain} KCAL daily.")
     print(f"For WEIGHT GAIN it's recommended: {gain} KCAL daily.")
+
+    # save all data into the worksheet calling its function
     save_to_worksheet(id, name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain)
     
 def check_bmi(name, weight, height):
+    """
+    Function to calculate the client BMI (body mass index)
+    """
     print("-------------------------\n")
     print("Let's calculate their (BMI)")
     print("BMI (body mass index) is a measure of whether you're a healthy weight for your height\n")
+    
+    # Calculate the BMI and show up to the user
     bmi_check = weight / (height/100)**2
-    bmi = round(bmi_check,1)
+    bmi = round(bmi_check,1)  # only 1 decimal 
     print(f"{name} BMI is: {bmi}\n")
 
+    # Condition to check if client is helthy or not
+    # comparing its bmi result
     if bmi <= 18.4:
         print(f"{name} is underweight.\n")
     elif bmi <= 24.9:
@@ -140,18 +162,21 @@ def check_bmi(name, weight, height):
     
 
 def check_bmr(name, gender, weight, height, age):
+    """
+    Function to calculate the client BMR (Basal metabolic rate)
+    """
     print("-------------------------\n")
     print("Let's calculate their (BMR)")
     print("BMR (Basal metabolic rate) is the amount of energy expended per day at rest.")
     print("This is fundamental to decide either if it is needed to consume" ) 
     print("more or less KCAL per day, depending on the client objective\n")
-    """
-    Calculating BMR formula
-    Male
-    10 x weight (kg) + 6.25 x height (cm) – 5 x age (y) + 5
-    Female
-    10 x weight (kg) + 6.25 x height (cm) – 5 x age (y) – 161
-    """
+    
+    # Calculating BMR formula
+    # Male
+    # 10 x weight (kg) + 6.25 x height (cm) – 5 x age (y) + 5
+    # Female
+    # 10 x weight (kg) + 6.25 x height (cm) – 5 x age (y) – 161
+    
     if gender == "m":
         bmr = 10 * weight + 6.25 * height - 5 * age + 5
     else:
@@ -161,8 +186,15 @@ def check_bmr(name, gender, weight, height, age):
     return bmr
     
 def create_diet(name, bmr, act_level):
+    """
+    Function to calculate the real KCAL consume of client
+    depending on activite level.
+    """
     print("-------------------------\n")
     print("Let's create a daily KCAL diet")
+    
+    # real_bmr is the BMR multiplied by activite level
+
     if act_level == 1.2:
         real_bmr = bmr * 1.2
     elif act_level == 1.375:
@@ -178,8 +210,12 @@ def create_diet(name, bmr, act_level):
     return real_bmr
 
 def save_to_worksheet(id, name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain):
+    """
+    Function to save all client data into the worksheet
+    """
     print("\nSaving client to our database...\n\n")
     
+    # Pass all client data into a list and then insert into the worksheet
     client_data = [id, name, last_name, gender, height, weight, age, act_level, bmi, bmr, loss, mantain, gain]
     worksheet.append_row(client_data)
     
@@ -187,6 +223,9 @@ def save_to_worksheet(id, name, last_name, gender, height, weight, age, act_leve
     print("Thank You!")
 
 def next():
+    """
+    Function just to make the app more interactable.
+    """
     while True:
         next = input(
             'Hit "n" to next\n\n'
@@ -198,18 +237,38 @@ def next():
         print('\nInvalid entry, please try again\n')
 
 def create_id():
+    """
+    Function to creat a unique ID for each client ( 6  numbers)
+    ps: I havent checked if the ID created is already been used
+    for other clients, because it can happen 1 time in 1.000.000 
+    0,0001 % probability
+    very unlikely to happen in a proportion of the number of clients
+    that ONE personal trainer has.
+    """
     chars = string.digits
     random =  ''.join(choice(chars) for _ in range(6))
     id = random
     return id
 
 def consult_client():
+    """
+    Function to consult existing client by its ID, and
+    if requested, update the client details, or return
+    to inital screen.
+    """
     id = input("\nPlease, what is the client ID?\n\n")
-    r = 1
+    
+    # "r" is the row of the worksheet where is based the existing client details,
+    # comparing the ID inserted I can find out the row number.
+    
+    r = 1 
     while worksheet.cell(r, 1).value != id:
         r += 1
     
     find_client = worksheet.row_values(r)
+
+    # Passing Client Existing data into separate variables, making this possible
+    # to interact with them easily
 
     client_id = find_client[0] 
     name = find_client[1] 
@@ -224,7 +283,8 @@ def consult_client():
     loss = find_client[10] 
     mantain = find_client[11]
     gain = find_client[12] 
-
+    
+    # Show up informations of the client selected
     print(f"The currently deatails we have from {name} are:\n\n")
     print(f"Name: {name}, Last Name: {last_name}, Gender: {gender}")
     print(f"Height: {height}, Weight: {weight}, Age: {age}, Activite Level: {act_level}\n\n")
@@ -232,34 +292,43 @@ def consult_client():
     print(f"For MANTAIN WEIGHT it's recommended: {mantain} KCAL daily.")
     print(f"For WEIGHT GAIN it's recommended: {gain} KCAL daily.")
 
+    # User decide if wants to edit/ update currently informations, 
+    # or leave the app.
     update_or_exit(name ,height, weight, age, act_level, gender, r)
     
 def update_client(name ,height, weight, age, act_level, gender, r):
-
+    """
+    Function to get and update the new inputs from the user, and then insert 
+    these data into the worksheet.
+    Calculate the BMI, BMR and DIET with the updated data.
+    """
     print(f"\n\nLets update {name}'s details\n")
+    
+    # Collect the variabels the could have changed 
     height = validate_height()
     weight = validate_weight()
     age = validate_age()
     act_level = activite_level()
-        
+
+    # Calculating the new BMI, BMR and DIET using the updated data    
     bmi = check_bmi(name, weight, height)
     next()
     bmr = check_bmr(name, gender, weight, height, age)
     next()
     diet_process = create_diet(name, bmr, act_level)
 
-    loss = int(diet_process * 0.85)
+    loss = int(diet_process * 0.85) # less 15% KCAL daily to loss weight
     mantain = int(diet_process)
-    gain = int(diet_process * 1.15)
+    gain = int(diet_process * 1.15) # more 15% KCAL daily to loss weight
 
+    # Show up the updated diet
     print(f"The new diet for {name} is:\n\n")
     print(f"For WEIGHT LOSS it's recommended: {loss} KCAL daily.")
     print(f"For MANTAIN WEIGHT it's recommended: {mantain} KCAL daily.")
     print(f"For WEIGHT GAIN it's recommended: {gain} KCAL daily.\n\n")
     
-    """
-    Update worksheet with all new informations collected at the right client row/id
-    """
+    # Update worksheet with all new informations collected at the right client row/id
+
     worksheet.update_cell(r, 5, height)
     worksheet.update_cell(r, 6, weight)
     worksheet.update_cell(r, 7, age)
@@ -275,6 +344,10 @@ def update_client(name ,height, weight, age, act_level, gender, r):
 
 
 def update_or_exit(name ,height, weight, age, act_level, gender, r):
+    """
+    Function to user decide either update cliente details, or
+    exit the app.
+    """
     print("\nHit one of the following options")
     print("\n1 - Update client details")
     print("2 - Exit\n")
@@ -288,7 +361,6 @@ def update_or_exit(name ,height, weight, age, act_level, gender, r):
             print("\nThank you!")
             return False
         print('\nInvalid entry, please try again\n')
-
 
 initial_screen()
 

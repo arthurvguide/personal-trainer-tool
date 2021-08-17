@@ -12,9 +12,13 @@ class Client:
         """
         Describes the instance of the new Client
         """
-        return f"Name: {self.name}, Last Name: {self.last_name}, Gender: {self.gender}, Height: {self.height}, Weight: {self.weight}, Age: {self.age}, Activite Level: {self.act_level}"
+        print(f"Name: {self.name}, Last Name: {self.last_name}, Gender: {self.gender}")
+        print(f"Height: {self.height}, Weight: {self.weight}, Age: {self.age}, Activite Level: {self.act_level}")
 
 def validate_name():
+    """
+    Function to get the name input and validate.
+    """
     while True:
         name = input("Client name?\n\n").lower()
         
@@ -24,6 +28,9 @@ def validate_name():
         print ("\nInvalid input! All characters should be alphabet letters (a-z)")
 
 def validate_l_name():
+    """
+    Function to get the last name input and validate.
+    """
     while True:
         last_name = input("Client last name?\n\n").lower()
         
@@ -33,6 +40,9 @@ def validate_l_name():
         print ("\nInvalid input! All characters should be alphabet letters (a-z)")
 
 def validate_gender():
+    """
+    Function to get the gender input and validate
+    """
     while True:
         gender = input("Client gender?  hit 'f' for female or 'm' for male\n\n")
 
@@ -46,6 +56,9 @@ def validate_gender():
             print("Invalid input!")
 
 def validate_height():
+    """
+    Function to get the height input and validate.
+    """
     while True:
         height = input("Client height (CM) ? It MUST be in Centimeters!!\n\n")
         
@@ -55,6 +68,9 @@ def validate_height():
         print ("\nInvalid input! All characters should be numbers (1-10)")
 
 def validate_weight():
+    """
+    Function to get the weight input and validate.
+    """
     while True:
         weight = input("Client weight (kg) ? It MUST be in Kilogram!!\n\n")
         
@@ -64,6 +80,9 @@ def validate_weight():
         print ("\nInvalid input! All characters should be numbers (1-10)")
 
 def validate_age():
+    """
+    Function to get the age input and validate.
+    """
     while True:
         age = input("Client Age?\n\n")
         
@@ -73,6 +92,9 @@ def validate_age():
         print ("\nInvalid input! All characters should be numbers (1-10)")
 
 def activite_level():
+    """
+    Function to get the activite level input and validate.
+    """
     print("Client Activite Level? Digit one of the following options:\n")
     print(" '1.2' for sedentary (little or no exercise)")
     print(" '1.375' for lightly active (light exercise/sports 1-3 days/week)")
