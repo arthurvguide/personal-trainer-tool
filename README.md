@@ -122,6 +122,13 @@
  ### Testing of user story 
   **"I would like to register a new client and create diets to them"**
 
+<details>
+    <summary>View image of initial steps of the booking</summary>
+
+![Initial](https://github.com/arthurvguide/personal-trainer-tool/blob/main/docs/images/project-img.JPG)
+
+</details>
+
   - **Actions**:
     * *User hits "n" to add new client*
     * *User enters "1" to agree on the application logging the patient data*
