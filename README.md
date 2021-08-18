@@ -28,8 +28,8 @@
     2. [Applications and Platforms](#applications-and-platforms)       
 6. [Validation](#validation)
 7. [Testing](#testing)
-    1. [Testing of user story 1](#testing-of user-story-1)
-    2. [Testing of user story 2](#testing-of user-story-2)
+    1. [Testing new client](#testing-new-client)
+    2. [Testing existing client](#testing-existing-client) 
 8. [Deployment](#deployment)
     1. [Heroku](#heroku)
     2. [Google API](#google-api)
@@ -120,7 +120,7 @@
 
 ## Testing
  
- ### Testing of user story 1
+ ### Testing new client
   **"I would like to register a new client and create diets to them"**
 
 <details>
@@ -164,6 +164,34 @@
  - Expected result: *To create a successful client and their diets*
 
  - Actual result: *Works as intended*
+
+ ### Testing existing client
+  **"I would like update a existing client details and process new diets**
+
+<details>
+    <summary>View image of initial steps of the booking</summary>
+
+![Initial](https://github.com/arthurvguide/personal-trainer-tool/blob/main/docs/images/project-img.JPG)
+
+</details>
+
+- **Actions**:
+    * *User hits "e" to access existing client*
+    * *User enters "1" to consult client*
+    * *User enters client id*
+    * *User get clients details and diets*
+    * *User enters 1 to update client details*
+    * *User enters client height*
+    * *User enters client weight*
+    * *User enters client age*
+    * *User enters client activite level*
+    * *User enters "n" to continue*
+    * *BMI is calculated"*
+    * *User enters "n" to continue*
+    * *BMR is calculated*
+    * *User enters "n" to continue*
+    * *New diet is calculated and updated*
+
 
 ## Deployment
  ### Heroku
