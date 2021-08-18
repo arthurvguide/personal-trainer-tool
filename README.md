@@ -80,6 +80,11 @@
 
 [Back to Table of contents](#table-of-contents)
 
+## Validation
+ All Python files passed the [PEP8](http://pep8online.com/) tests with 0 errors.
+ Click [here]() to view them.
+
+
 ## Deployment
  ### Heroku
  This application has been deployed from Github using Heroku. Here's how:
@@ -105,3 +110,6 @@
  6. Download the credential and upload it to your workspace as creds.json file
  7. Under API's and services, enable the relevant API for your project (in this case Google Drive, Sheets)
  8. Add them to your code.
+
+ [Back to Table of contents](#table-of-contents)
+
