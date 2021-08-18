@@ -69,8 +69,8 @@
  - [Github](https://github.com/) - The projects repository and all its branches were commited, pushed and deployed to Github.
  - [Gitpod](https://gitpod.com/) - All code was written and tested using the Gitpod web-based IDE.
  - [Heroku](https://www.heroku.com) - Used to deploy the application.
- - [Lucidchart](https://lucid.co/product/lucidchart) - Lucidchart was used to create the [flowchart](#flowchart) of the project.
- - [Google Sheets](https://calendar.google.com/) - - The users input data creates and edits content on Google Sheets
+ - [Lucidchart](https://lucid.co/product/lucidchart) - Lucidchart was used to create the flowchart of the project.
+ - [Google Sheets](https://calendar.google.com/) - The users input data creates and edits content on Google Sheets
  - [Google Cloud Platform](https://console.cloud.google.com/) - All data send and received with the help of the Google API, through the Google Cloud Platform
 
 #### Third Party Libraries
@@ -79,3 +79,29 @@
 - gspread: so the application can read Google Spreadsheets
 
 [Back to Table of contents](#table-of-contents)
+
+## Deployment
+ ### Heroku
+ This application has been deployed from Github using Heroku. Here's how:
+ 1. Create an account at [heroku.com](https://.heroku.com/)
+ 2. Create a new app, add app name and your region
+ 3. Click on create app
+ 4. Go to "Settings"
+ 5. Under Config Vars, add your sensitive data (creds.json for example)
+ 6. For this project, I set buildpacks to <Python> and <NodeJS> in that order.
+ 7. Go to "Deploy" and at "Deployment method", click on "Connect to Github"
+ 8. Enter your repository name and click on it when it shows below
+ 9. Choose the branch you want to buid your app from
+ 10. If desired, click on "Enable Automatic Deploys", which keeps the app up to date with your Github repository
+ 11. All done!
+
+ ### Google API
+ Here's how you can set up your own API:
+ 1. Login or create a Google account and navigate to https://console.cloud.google.com/
+ 2. Create a new Project by clicking on the New Project icon
+ 3. Add Project name and details
+ 4. Under API's and services, enable the relevant API for your project (in this case Google Drive, Sheets)
+ 5. IF the API requires, create a credential (service account in this case) for your project
+ 6. Download the credential and upload it to your workspace as creds.json file
+ 7. Under API's and services, enable the relevant API for your project (in this case Google Drive, Sheets)
+ 8. Add them to your code.
