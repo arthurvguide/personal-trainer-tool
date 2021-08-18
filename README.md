@@ -20,9 +20,6 @@
     2. [New Client](#new-client)
     3. [Existing Client](#existing-client)
 4. [Features](#features)
-    1. [Feature 1: The New Client](#feature-1-new-client)
-    2. [Feature 2: The Existing Client](#feature-2-existing-client)
-    3. [Features to be implemented](#features-to-be-implemented)
 5. [Technologies Used](#technologies-used)
     1. [Languages](#languages)
     2. [Applications and Platforms](#applications-and-platforms)       
@@ -165,6 +162,8 @@
 
  - Actual result: *Works as intended*
 
+ [Back to Table of contents](#table-of-contents)
+ 
  ### Testing existing client
   **"I would like to update a existing client details and process new diets**
 
@@ -210,6 +209,8 @@
 
  - Actual result: *Works as intended*
 
+ [Back to Table of contents](#table-of-contents)
+
 ## Deployment
  ### Heroku
  This application has been deployed from Github using Heroku. Here's how:
@@ -242,5 +243,7 @@
  - Youtube video clarifying [GSPREAD](https://www.youtube.com/watch?v=wrR0YLzh4DQ)
  - Formula to calculate [BMR](https://www.leighpeele.com/mifflin-st-jeor-calculator)
  - Formula to calculate [BMI](https://dev.to/mindninjax/how-to-build-a-bmi-calculator-in-python-4g2g) in Python
- - An similiar app that help me to construct an idea [here](https://www.omnicalculator.com/health/bmr-harris-benedict-equation)
+ - A similiar app that helps me to construct an project idea [here](https://www.omnicalculator.com/health/bmr-harris-benedict-equation)
  - GITPOD template from Code Institute
+
+ [Back to Table of contents](#table-of-contents)
