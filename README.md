@@ -150,17 +150,19 @@
 <details>
     <summary>View image of midle steps</summary>
 
-![Initial]()
+![Initial](https://github.com/arthurvguide/personal-trainer-tool/blob/main/docs/images/tests-1/test%201-2.JPG)
 
 </details>
 
 <details>
     <summary>View image of final steps</summary>
 
-![Initial]()
+![Initial](https://github.com/arthurvguide/personal-trainer-tool/blob/main/docs/images/tests-1/test-1-1.JPG)
 
 </details>
+
  - Expected result: *To create a successful client and their diets*
+
  - Actual result: *Works as intended*
 
 ## Deployment
