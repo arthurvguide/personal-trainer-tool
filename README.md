@@ -27,12 +27,13 @@
     1. [Languages](#languages)
     2. [Applications and Platforms](#applications-and-platforms)       
 6. [Validation](#validation)
-7. [Testing of New Client User stories](#testing-of-new-client-user-stories)
-8. [Testing of Existing Client User stories](#testing-of-existing-client-user-stories)
-10. [Deployment](#deployment)
+7. [Testing](#testing)
+    1. [Testing of user story 1](#testing-of user-story-1)
+    2. [Testing of user story 2](#testing-of user-story-2)
+8. [Deployment](#deployment)
     1. [Heroku](#heroku)
     2. [Google API](#google-api)
-11. [Credits](#credits)
+9. [Credits](#credits)
 
 ## Project Goals
  The project goals are:
@@ -119,7 +120,7 @@
 
 ## Testing
  
- ### Testing of user story 
+ ### Testing of user story 1
   **"I would like to register a new client and create diets to them"**
 
 <details>
@@ -146,6 +147,19 @@
     * *User enters "n" to continue*
     * *Diet is calculated and saved*
 
+<details>
+    <summary>View image of midle steps</summary>
+
+![Initial]()
+
+</details>
+
+<details>
+    <summary>View image of final steps</summary>
+
+![Initial]()
+
+</details>
  - Expected result: *To create a successful client and their diets*
  - Actual result: *Works as intended*
 
