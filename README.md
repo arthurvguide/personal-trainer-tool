@@ -192,6 +192,23 @@
     * *User enters "n" to continue*
     * *New diet is calculated and updated*
 
+<details>
+    <summary>View image of midle steps</summary>
+
+![Initial](https://github.com/arthurvguide/personal-trainer-tool/blob/main/docs/images/existing-client/test-2-1.JPG)
+
+</details>
+
+<details>
+    <summary>View image of final steps</summary>
+
+![Initial](https://github.com/arthurvguide/personal-trainer-tool/blob/main/docs/images/existing-client/test-2-2.JPG)
+
+</details>
+
+ - Expected result: *To update a client details and their diets*
+
+ - Actual result: *Works as intended*
 
 ## Deployment
  ### Heroku
