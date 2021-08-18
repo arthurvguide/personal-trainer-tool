@@ -76,6 +76,8 @@
 
   Click [here](https://github.com/arthurvguide/personal-trainer-tool/tree/main/docs/images/existing-client) to view the screenshots.
 
+  [Back to Table of contents](#table-of-contents)
+
 ## Features
  - Calculate Body Mass Index (BMI)
  - Calculate Basal Metabolic Rate (BMR)
@@ -85,7 +87,13 @@
  - Save data into a worksheet
  - Update existing client and create new diets
  - User can have several clients at the same time
- 
+
+## Future Features
+ - User can delete a client
+ - User can save new details without deleting the old ones, being possible to do a future comparison 
+ - Create diets specifying the number of carbohydrates, fat, and protein depending on client goal.
+
+ [Back to Table of contents](#table-of-contents)
 ## Technologies Used
 
 ### Languages
