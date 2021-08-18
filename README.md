@@ -166,7 +166,7 @@
  - Actual result: *Works as intended*
 
  ### Testing existing client
-  **"I would like update a existing client details and process new diets**
+  **"I would like to update a existing client details and process new diets**
 
 <details>
     <summary>View image of initial steps of the booking</summary>
@@ -238,3 +238,7 @@
 
  [Back to Table of contents](#table-of-contents)
 
+## Credits
+ - Youtube video clarifying [GSPREAD](https://www.youtube.com/watch?v=wrR0YLzh4DQ)
+ - Formula to calculate [BMR](https://www.leighpeele.com/mifflin-st-jeor-calculator)
+ - An similiar app that help me to construct an idea [here](https://www.omnicalculator.com/health/bmr-harris-benedict-equation)
