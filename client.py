@@ -122,7 +122,9 @@ def activite_level():
 
 def validate_id(all_ids):
     """
-    Function to validate id input
+    Function to validate id input.
+    ID is found on the worksheet
+    https://docs.google.com/spreadsheets/d/1xkOIW6pDstDv1EDaznGfMbKba8Nzhc8cX9CcQQYTlNw/edit?usp=sharing
     """
     while True:
         id = input("\nPlease, what is the client ID? Find it on worksheet\n\n")

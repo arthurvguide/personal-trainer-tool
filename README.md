@@ -29,7 +29,6 @@
 6. [Validation](#validation)
 7. [Testing of New Client User stories](#testing-of-new-client-user-stories)
 8. [Testing of Existing Client User stories](#testing-of-existing-client-user-stories)
-9. [Bugs](#bugs)
 10. [Deployment](#deployment)
     1. [Heroku](#heroku)
     2. [Google API](#google-api)
@@ -118,6 +117,30 @@
  All Python files passed the [PEP8](http://pep8online.com/) tests with 0 errors.
  Click [here](https://github.com/arthurvguide/personal-trainer-tool/blob/main/docs/images/pep8-run-py.JPG) to view them.
 
+## Testing
+ 
+ ### Testing of user story 
+  **"I would like to register a new client and create diets to them"**
+
+  - **Actions**:
+    * *User hits "n" to add new client*
+    * *User enters "1" to agree on the application logging the patient data*
+    * *User enters client name*
+    * *User enters client last name*
+    * *User enters client gender*
+    * *User enters client height*
+    * *User enters client weight*
+    * *User enters client age*
+    * *User enters client activite level*
+    * *User enters "n" to continue*
+    * *BMI is calculated"*
+    * *User enters "n" to continue*
+    * *BMR is calculated*
+    * *User enters "n" to continue*
+    * *Diet is calculated and saved*
+
+ - Expected result: *To create a successful client and their diets*
+ - Actual result: *Works as intended*
 
 ## Deployment
  ### Heroku
