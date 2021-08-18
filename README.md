@@ -77,6 +77,14 @@
   Click [here](https://github.com/arthurvguide/personal-trainer-tool/tree/main/docs/images/existing-client) to view the screenshots.
 
 ## Features
+ - Calculate Body Mass Index (BMI)
+ - Calculate Basal Metabolic Rate (BMR)
+ - Create diet to loss weight
+ - Create diet to gain weight
+ - Create diet to mantain weight
+ - Save data into a worksheet
+ - Update existing client and create new diets
+ - User can have several clients at the same time
  
 ## Technologies Used
 
