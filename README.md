@@ -241,4 +241,6 @@
 ## Credits
  - Youtube video clarifying [GSPREAD](https://www.youtube.com/watch?v=wrR0YLzh4DQ)
  - Formula to calculate [BMR](https://www.leighpeele.com/mifflin-st-jeor-calculator)
+ - Formula to calculate [BMI](https://dev.to/mindninjax/how-to-build-a-bmi-calculator-in-python-4g2g) in Python
  - An similiar app that help me to construct an idea [here](https://www.omnicalculator.com/health/bmr-harris-benedict-equation)
+ - GITPOD template from Code Institute
