@@ -19,26 +19,21 @@
     1. [Initial Screen](#inital-screen)
     2. [New Client](#new-client)
     3. [Existing Client](#existing-client)
-4. [Technical Design](#technical-design)
-    1. [Flow Chart](#flow-chart)
-    2. [Data Models](#data-models)
-5. [Features](#features)
+4. [Features](#features)
     1. [Feature 1: The New Client](#feature-1-new-client)
     2. [Feature 2: The Existing Client](#feature-2-existing-client)
     3. [Features to be implemented](#features-to-be-implemented)
-6. [Technologies Used](#technologies-used)
+5. [Technologies Used](#technologies-used)
     1. [Languages](#languages)
     2. [Applications and Platforms](#applications-and-platforms)       
-7. [Validation](#validation)
-8. [Testing of New Client User stories](#testing-of-new-client-user-stories)
-9. [Testing of Existing Client User stories](#testing-of-existing-client-user-stories)
-10. [Bugs](#bugs)
-11. [Deployment](#deployment)
-    1. [Forking the GitHub Repository](#forking-the-github-repository)
-    2. [Making a Local Clone](#making-a-local-clone)
-    3. [Heroku](#heroku)
-    4. [Google API](#google-api)
-12. [Credits](#credits)
+6. [Validation](#validation)
+7. [Testing of New Client User stories](#testing-of-new-client-user-stories)
+8. [Testing of Existing Client User stories](#testing-of-existing-client-user-stories)
+9. [Bugs](#bugs)
+10. [Deployment](#deployment)
+    1. [Heroku](#heroku)
+    2. [Google API](#google-api)
+11. [Credits](#credits)
 
 ## Project Goals
  The project goals are:
@@ -59,6 +54,14 @@
   - Track their clients
  
  [Back to Table of contents](#table-of-contents)
+
+## Structure
+ ### Flowchart
+Below is a flowchart describing the structure of the application, created with [Lucidchart](https://lucid.co/product/lucidchart).
+ <details>
+    <summary>View flowchart here</summary>
+ ![Flowchart]()
+ </details>
 
 ## Technologies Used
 
@@ -82,7 +85,7 @@
 
 ## Validation
  All Python files passed the [PEP8](http://pep8online.com/) tests with 0 errors.
- Click [here]() to view them.
+ Click [here](https://github.com/arthurvguide/personal-trainer-tool/blob/main/docs/images/pep8-run-py.JPG) to view them.
 
 
 ## Deployment
