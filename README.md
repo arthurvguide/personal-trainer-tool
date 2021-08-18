@@ -60,7 +60,7 @@
 Below is a flowchart describing the structure of the application, created with [Lucidchart](https://lucid.co/product/lucidchart).
  <details>
     <summary>View flowchart here</summary>
- ![Flowchart]()
+ ![Flowchart](https://github.com/arthurvguide/personal-trainer-tool/blob/main/docs/images/flowchart.png)
  </details>
 
 ## Technologies Used
