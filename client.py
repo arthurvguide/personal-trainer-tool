@@ -125,7 +125,7 @@ def validate_id(all_ids):
     Function to validate id input
     """
     while True:
-        id = input("\nPlease, what is the client ID?\n\n")
+        id = input("\nPlease, what is the client ID? Find it on worksheet\n\n")
         if id in all_ids:
             return id
         print("\nInvalid ID! Try Again")

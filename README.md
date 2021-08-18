@@ -57,12 +57,21 @@
 
 ## Structure
  ### Flowchart
-Below is a flowchart describing the structure of the application, created with [Lucidchart](https://lucid.co/product/lucidchart).
- <details>
-    <summary>View flowchart here</summary>
- ![Flowchart](https://github.com/arthurvguide/personal-trainer-tool/blob/main/docs/images/flowchart.png)
- </details>
+ Below is a flowchart describing the structure of the application, created with [Lucidchart](https://lucid.co/product/lucidchart).
 
+ Click [here](https://github.com/arthurvguide/personal-trainer-tool/blob/main/docs/images/flowchart.png) to view them.
+ 
+ ### Initial Screen 
+  At the Initial Screen, user has two options: navigate to new client, or to existing client. This welcomes the user, and give them some instructions.
+  Click [here](https://github.com/arthurvguide/personal-trainer-tool/blob/main/docs/images/project-img.JPG) to view the screenshot.
+
+ ### New Client 
+  At the new client section, user will be asked many details to calculate Body Mass Index (BMI), Basal Metabolic Rate (BMR), and to create diets. At the end inserting all the data into the worksheet.
+  Click [here]() to view the screenshots
+
+ ### Existing Client 
+  At the existing client section, user will be able to consult a client that was already created before, by their ID. If wanted, user can update the client details, and create new diets.
+  Click [here]() to view the screenshots
 ## Technologies Used
 
 ### Languages
