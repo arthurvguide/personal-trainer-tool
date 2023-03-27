@@ -1,4 +1,4 @@
-# [Personal Trainer Tool](https://personal-trainer-tool.herokuapp.com/)
+# [Personal Trainer Tool](https://personaltrainer.onrender.com/)
 
  ![](/docs/images/project-img.JPG)
 
@@ -6,7 +6,7 @@
 
  This app analyzes client's health and creates diets for them, according to their goals.
  
- [Click here](https://personal-trainer-tool.herokuapp.com/) to visit the deployed site.
+ [Click here](https://personaltrainer.onrender.com/) to visit the deployed site.
 
  [Here](https://docs.google.com/spreadsheets/d/1xkOIW6pDstDv1EDaznGfMbKba8Nzhc8cX9CcQQYTlNw/edit?usp=sharing) is the link to the Google Spreadsheet, to see the updates made.
 
